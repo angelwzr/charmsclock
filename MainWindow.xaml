@@ -1,0 +1,39 @@
+﻿<Window x:Class="ChClock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChClock"
+        mc:Ignorable="d"
+        Title="Clock"
+        Height="160" Width="445"
+        Topmost="True"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        AllowsTransparency="True"
+        Opacity="0.8"
+        Background="Black"
+        MouseDown="Window_MouseDown"
+        Activated="Window_Activated"
+        Deactivated="Window_Deactivated"
+        PreviewLostKeyboardFocus="Window_PreviewLostKeyboardFocus">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="net" Text="&#xEC27;" FontSize="25" Foreground="White" FontFamily="Segoe MDL2 Assets" Margin="0,0,0,15"/>
+            <TextBlock x:Name="bat" Text="&#xE85E;" FontSize="25" Foreground="White" FontFamily="Segoe MDL2 Assets" Margin="0,15,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="time" Text="00:00" FontSize="60" Foreground="White" FontFamily="Segoe UI Light"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="day" Text="Monday" FontSize="35" Foreground="White" FontFamily="Segoe UI Light"/>
+            <TextBlock x:Name="date" Text="January 1" FontSize="35" Foreground="White" FontFamily="Segoe UI Light"/>
+        </StackPanel>
+    </Grid>
+</Window>
