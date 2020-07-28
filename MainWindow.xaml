@@ -11,16 +11,24 @@
         Topmost="True"
         fw:AcrylicWindow.Enabled="True"
         fw:AcrylicWindow.AcrylicWindowStyle="None"
+        fw:AcrylicWindow.NoiseOpacity="0"
+        AllowsTransparency="True"
         WindowStyle="None"
         ResizeMode="NoResize"
         ShowInTaskbar="False"
-        AllowsTransparency="True"
-        Opacity="0.8"
+        WindowStartupLocation="Manual"
+        Left="50"
+        Top="900"
         MouseDown="Window_MouseDown"
         Activated="Window_Activated"
         Deactivated="Window_Deactivated"
         PreviewLostKeyboardFocus="Window_PreviewLostKeyboardFocus">
     <Grid>
+        <Grid.ContextMenu>
+            <fw:AcrylicContextMenu>
+                <MenuItem x:Uid="ExitButton" Header="Exit" Click="Exit_Click"/>
+            </fw:AcrylicContextMenu>
+        </Grid.ContextMenu>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="4*"/>
@@ -37,6 +45,6 @@
             <TextBlock x:Name="day" Text="Monday" FontSize="35" FontFamily="Segoe UI Light"/>
             <TextBlock x:Name="date" Text="January 1" FontSize="35" FontFamily="Segoe UI Light"/>
         </StackPanel>
-        
+
     </Grid>
 </Window>

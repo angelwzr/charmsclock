@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace ChClock
@@ -33,12 +22,12 @@ namespace ChClock
             timer.Tick += new EventHandler(delegate (object s, EventArgs a)
             {
 
-                time.Text = "" + DateTime.Now.ToString("HH") + ":"
+                time.Text = DateTime.Now.ToString("HH") + ":"
               + DateTime.Now.ToString("mm");
 
                 day.Text = "" + DateTime.Now.DayOfWeek;
 
-                date.Text = "" + DateTime.Now.ToString("MMMM") + " " + DateTime.Now.Day;
+                date.Text = DateTime.Now.ToString("MMMM") + " " + DateTime.Now.Day;
             });
         }
 
@@ -66,5 +55,9 @@ namespace ChClock
             window.Topmost = true;
         }
 
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
