@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         xmlns:local="clr-namespace:ChClock"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
         Title="Clock"
         Height="160" Width="445"
@@ -14,9 +15,11 @@
         fw:AcrylicWindow.NoiseOpacity="0"
         AllowsTransparency="True"
         WindowStyle="None"
+        Visibility="Hidden"
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         WindowStartupLocation="Manual"
+        Icon="pack://application:,,,/Resources/ico.ico"
         Left="50"
         Top="900"
         MouseDown="Window_MouseDown"
@@ -24,27 +27,34 @@
         Deactivated="Window_Deactivated"
         PreviewLostKeyboardFocus="Window_PreviewLostKeyboardFocus">
     <Grid>
-        <Grid.ContextMenu>
-            <fw:AcrylicContextMenu>
-                <MenuItem x:Uid="ExitButton" Header="Exit" Click="Exit_Click"/>
-            </fw:AcrylicContextMenu>
-        </Grid.ContextMenu>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock x:Name="net" Text="&#xEC27;" FontSize="25" FontFamily="Segoe MDL2 Assets" Margin="0,0,0,15"/>
-            <TextBlock x:Name="bat" Text="&#xE85E;" FontSize="25" FontFamily="Segoe MDL2 Assets" Margin="0,15,0,0"/>
+            <TextBlock x:Name="net" Text="&#xEC27;" FontSize="25" FontFamily="Segoe MDL2 Assets" Margin="0,0,0,15" />
+            <!--<TextBlock x:Name="bat" Text="&#xE85E;" FontSize="25" FontFamily="Segoe MDL2 Assets" Margin="0,15,0,0"/>-->
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock x:Name="time" Text="00:00" FontSize="90" FontFamily="Segoe UI Light"/>
+            <TextBlock x:Name="time" Text="00:00" FontSize="90" FontFamily="Segoe UI Light" />
         </StackPanel>
         <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock x:Name="day" Text="Monday" FontSize="35" FontFamily="Segoe UI Light"/>
-            <TextBlock x:Name="date" Text="January 1" FontSize="35" FontFamily="Segoe UI Light"/>
+            <TextBlock x:Name="day" Text="Monday" FontSize="35" FontFamily="Segoe UI Light" />
+            <TextBlock x:Name="date" Text="January 1" FontSize="35" FontFamily="Segoe UI Light" />
         </StackPanel>
-
+        <tb:TaskbarIcon
+            x:Name="ChClockIcon"
+            ToolTipText="Charms clock"
+            Visibility="Visible"
+            IconSource="pack://application:,,,/Resources/ico.ico"
+            TrayLeftMouseDown="TrayIconClick">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu x:Uid="ContextMenu">
+                    <MenuItem x:Uid="SettingsButton" Header="Settings" Click="Settings_Click" />
+                    <MenuItem x:Uid="ExitButton" Header="Exit" Click="Exit_Click" />
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
     </Grid>
 </Window>
