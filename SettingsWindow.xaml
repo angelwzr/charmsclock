@@ -9,5 +9,10 @@
         Icon="pack://application:,,,/Resources/ico.ico"
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
         Height="450" Width="600">
-    <Grid />
+    <Grid>
+        <StackPanel Margin="5">
+            <TextBlock Text="This is a placeholder window for app settings"/>
+            <TextBlock Text="Use Ctrl+Shift+C key combo to show Charms window at any time."/>
+        </StackPanel>
+    </Grid>
 </Window>

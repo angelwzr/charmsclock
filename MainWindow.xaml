@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:ChClock"
         xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
-        Title="Clock"
+        Title="charms10"
         Height="160" Width="445"
         Topmost="True"
         fw:AcrylicWindow.Enabled="True"
@@ -18,13 +18,14 @@
         Visibility="Hidden"
         ResizeMode="NoResize"
         ShowInTaskbar="False"
-        WindowStartupLocation="Manual"
         Icon="pack://application:,,,/Resources/ico.ico"
         Left="50"
         Top="900"
         MouseDown="Window_MouseDown"
         Activated="Window_Activated"
         Deactivated="Window_Deactivated"
+        xmlns:windowStateHelper="clr-namespace:WindowStateHelper;assembly=WindowStateHelper"
+        windowStateHelper:WindowStateHelper.Active="true"
         PreviewLostKeyboardFocus="Window_PreviewLostKeyboardFocus">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -33,7 +34,7 @@
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock x:Name="net" Text="&#xEC27;" FontSize="25" FontFamily="Segoe MDL2 Assets" Margin="0,0,0,15" />
+            <!--<TextBlock x:Name="net" Text="&#xEC27;" FontSize="25" FontFamily="Segoe MDL2 Assets" Margin="0,0,0,15" />-->
             <!--<TextBlock x:Name="bat" Text="&#xE85E;" FontSize="25" FontFamily="Segoe MDL2 Assets" Margin="0,15,0,0"/>-->
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
